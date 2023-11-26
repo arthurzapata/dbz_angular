@@ -1,8 +1,8 @@
 <li *ngIf="charact.length==0">Ningun elemento</li>
 
-<ul class="list-group">
-  <li *ngFor="let items of charact;let i=index" class="list-group-item">
+<ul class="list-group ">
+  <li *ngFor="let items of charact;let i=index" class="list-group-item d-flex justify-content-between align-items-center">
     {{ i + 1}} - {{ items.name }} - Power : {{ items.power }}
-    <button (click)="onDelete(i)" class="btn btn-danger">X</button>
+    <button (click)="onDelete(items.id='')" class="btn btn-danger">X</button>
   </li>
 </ul>

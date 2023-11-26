@@ -4,13 +4,21 @@ import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-dbz-main',
-  templateUrl: './main.components.html'  
+  templateUrl: './main.components.html'
 })
 export class MainComponent {
-    /**
-     *
-     */
-    constructor(public dbzService:DbzService) {
 
+    constructor(private dbzService:DbzService) {}
+
+    get characters() : Character[]{
+        return [...this.dbzService.characters]
+    }
+
+    NewCharacter(character:Character):void{
+        this.dbzService.NewCharacter(character);
+    }
+
+    DeleteCharacterById(id:string):void{
+      this.dbzService.DeleteCharacterById(id);
     }
 }
